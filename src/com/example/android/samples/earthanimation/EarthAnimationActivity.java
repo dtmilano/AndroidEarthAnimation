@@ -68,9 +68,6 @@ public class EarthAnimationActivity extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-
-		// ORIGINAL:
-		//(new Timer(false)).schedule(new AnimationTimer(mEarthButtonAnimation), DELAY);
 	}
 
 	/* (non-Javadoc)
@@ -85,23 +82,9 @@ public class EarthAnimationActivity extends Activity {
 	@Override
 	public void onWindowFocusChanged(boolean hasFocus){
 		super.onWindowFocusChanged(hasFocus);
-		mEarthButtonAnimation.start();
+		if ( hasFocus ) {
+			mEarthButtonAnimation.start();
+		}
 	}
-
-
-//	private static class AnimationTimer extends TimerTask {
-//		AnimationDrawable animation;
-//		
-//		public AnimationTimer(AnimationDrawable animation) {
-//			this.animation = animation;
-//		}
-//
-//		@Override
-//		public void run() {
-//			animation.start();
-//			this.cancel();
-//		}
-//		
-//	}
     
 }
