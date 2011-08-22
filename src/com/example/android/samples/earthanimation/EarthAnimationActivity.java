@@ -1,19 +1,14 @@
 package com.example.android.samples.earthanimation;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 import android.app.Activity;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 
 public class EarthAnimationActivity extends Activity {
-
-    private static final int DELAY = 40;
 
 	private static final String TAG = "EarthAnimationActivity";
 
@@ -74,7 +69,8 @@ public class EarthAnimationActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 
-		(new Timer(false)).schedule(new AnimationTimer(mEarthButtonAnimation), DELAY);
+		// ORIGINAL:
+		//(new Timer(false)).schedule(new AnimationTimer(mEarthButtonAnimation), DELAY);
 	}
 
 	/* (non-Javadoc)
@@ -86,19 +82,26 @@ public class EarthAnimationActivity extends Activity {
 		mEarthButtonAnimation.stop();
 	}
 
-	private static class AnimationTimer extends TimerTask {
-		AnimationDrawable animation;
-		
-		public AnimationTimer(AnimationDrawable animation) {
-			this.animation = animation;
-		}
-
-		@Override
-		public void run() {
-			animation.start();
-			this.cancel();
-		}
-		
+	@Override
+	public void onWindowFocusChanged(boolean hasFocus){
+		super.onWindowFocusChanged(hasFocus);
+		mEarthButtonAnimation.start();
 	}
+
+
+//	private static class AnimationTimer extends TimerTask {
+//		AnimationDrawable animation;
+//		
+//		public AnimationTimer(AnimationDrawable animation) {
+//			this.animation = animation;
+//		}
+//
+//		@Override
+//		public void run() {
+//			animation.start();
+//			this.cancel();
+//		}
+//		
+//	}
     
 }
