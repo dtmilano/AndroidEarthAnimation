@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- Animation frames for earth -->
+	<!--  android:id="@+id/earth_animation_rev" -->
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+	android:oneshot="false" android:visible="true">
+	<item android:drawable="@drawable/earth9" android:duration="150" />
+	<item android:drawable="@drawable/earth8" android:duration="150" />
+	<item android:drawable="@drawable/earth7" android:duration="150" />
+	<item android:drawable="@drawable/earth6" android:duration="150" />
+	<item android:drawable="@drawable/earth5" android:duration="150" />
+	<item android:drawable="@drawable/earth4" android:duration="150" />
+	<item android:drawable="@drawable/earth3" android:duration="150" />
+	<item android:drawable="@drawable/earth2" android:duration="150" />
+	<item android:drawable="@drawable/earth1" android:duration="150" />
+	<item android:drawable="@drawable/earth0" android:duration="150" />
+</animation-list>
